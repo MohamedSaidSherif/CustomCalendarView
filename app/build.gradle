@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.android.calendarviewexample'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.android.calendarviewexample"
+        minSdk 29
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+}
+
+dependencies {
+
+    //Duplicate class android.support.v4.app.INotificationSideChannel
+    // found in modules core-1.8.0-runtime (androidx.core:core:1.8.0)
+    // and support-compat-27.0.2-runtime (com.android.support:support-compat:27.0.2)
+//    implementation('com.github.prolificinteractive:material-calendarview:2.0.1'){
+//        exclude group: 'androidx.core:core', module: 'core-1.8.0-runtime'
+//    }
+//    implementation 'com.github.npanigrahy:Custom-Calendar-View:v1.0'
+//    implementation 'com.applandeo:material-calendar-view:1.7.0'
+//    implementation 'ru.cleverpumpkin:crunchycalendar:2.2.0'
+//    implementation 'com.github.hachimann:material-calendarview:0.0.9'
+//    implementation 'com.github.eoinoconnell:material-calendarview:v1.2.0'
+//    implementation 'dev.applibgroup:materialcalendar:1.0.0'
+//    implementation 'com.github.BlackBoxVision:material-calendar-view:v1.5.8'
+//    implementation 'com.ptrstovka.calendarview2:calendarview2:2.0-alpha4'
+    implementation 'com.kizitonwose.calendar:view:2.1.0'
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+}
